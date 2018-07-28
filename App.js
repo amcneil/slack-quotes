@@ -1,23 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import styled from 'styled-components';
+import { ScrollView } from './node_modules/react-native-gesture-handler';
+import { Header, UserCard } from './src/components';
+import people from './src/util/people';
+
+
+
+const ScreenContainer = styled.View`
+  flex: 1;
+  background-color: white;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 24px;
+`
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <ScrollView>
+        <ScreenContainer>
+          <Header />
+          {people.map(person => <UserCard person={person} thing="thing" key={person.name}/>)}
+        </ScreenContainer>
+      </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
