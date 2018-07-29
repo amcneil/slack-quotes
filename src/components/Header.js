@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header } from 'react-native-elements'
-import styled from 'styled-components';
 
 const CustomHeader = () => (
   <Header
