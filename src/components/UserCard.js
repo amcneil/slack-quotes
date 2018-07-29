@@ -8,14 +8,14 @@ const UserName = styled.Text`
   text-align: center;
 `
 
-const UserCard = ({ person }) => {
+const UserCard = ({ person, navigation}) => {
   return (
-    <Card containerStyle={{ padding: 10, width: '95%', justifyContent: 'center', alignItems: 'center' }} >
+    <Card onPress={ () => navigation.navigate('Quote') } containerStyle={{ padding: 10, width: '95%', justifyContent: 'center', alignItems: 'center' }} >
       <Avatar
         rounded
         xlarge
         source={{uri: person.avatar}}
-        onPress={() => console.log("Works!")}
+        onPress={() => (navigation.navigate('Quote'))}
         activeOpacity={0.7}
       />
       <UserName>{person.name}</UserName>

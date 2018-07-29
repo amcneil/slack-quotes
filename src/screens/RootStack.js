@@ -1,15 +1,30 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import { Home } from './index';
+import { Home, Quote } from './index';
 
+
+const MainStack = createStackNavigator(
+  {
+    Home: {
+      screen: Home,
+    }
+  },
+  {}
+);
 
 const RootStack = createStackNavigator(
   {
-    Home: Home
+    Home: {
+      screen: MainStack,
+    },
+    Quote: {
+      screen: Quote,
+    },
   },
   {
-    initialRouteName: 'Home',
+    mode: 'modal',
+    headerMode: 'none',
   }
 );
 

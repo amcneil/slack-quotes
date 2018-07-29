@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text, ScrollView } from 'react-native'
+import { ScrollView } from 'react-native'
 import { Header, UserCard } from '../components';
 import people from '../util/people';
 
@@ -10,7 +10,6 @@ const ScreenContainer = styled.View`
   background-color: white;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 24px;
 `
 
 class Home extends React.Component {
@@ -19,7 +18,7 @@ class Home extends React.Component {
       <ScrollView>
         <ScreenContainer>
           <Header />
-          {people.map(person => <UserCard person={person} thing="thing" key={person.name}/>)}
+          {people.map(person => <UserCard person={person} navigation={this.props.navigation} key={person.name} />)}
         </ScreenContainer>
       </ScrollView>
     );
