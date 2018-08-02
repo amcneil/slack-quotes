@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import { Home, Quote } from './index';
 
@@ -25,7 +24,7 @@ const RootStack = createStackNavigator(
   {
     mode: 'modal',
     headerMode: 'none',
-    initialRouteName: 'Quote'
+    initialRouteName: 'Home'
   }
 );
 

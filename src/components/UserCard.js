@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Avatar } from 'react-native-elements'
+import { Card } from 'react-native-elements'
 import styled from 'styled-components';
+import { Avatar } from './index';
 
 const UserName = styled.Text`
   font-size: 24px;
@@ -9,14 +10,12 @@ const UserName = styled.Text`
 `
 
 const UserCard = ({ person, navigation}) => {
+  const navigateToQuoteScreen = () => navigation.navigate('Quote', {person});
   return (
-    <Card onPress={ () => navigation.navigate('Quote') } containerStyle={{ padding: 10, width: '95%', justifyContent: 'center', alignItems: 'center' }} >
+    <Card containerStyle={{ padding: 10, width: '95%', justifyContent: 'center', alignItems: 'center' }} >
       <Avatar
-        rounded
-        xlarge
-        source={{uri: person.avatar}}
-        onPress={() => (navigation.navigate('Quote'))}
-        activeOpacity={0.7}
+        person={person}
+        onPress={navigateToQuoteScreen}
       />
       <UserName>{person.name}</UserName>
     </Card>
