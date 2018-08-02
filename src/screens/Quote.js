@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text, ScrollView } from 'react-native'
+import { Text, View, ScrollView } from 'react-native';
+import { QuoteBubble } from '../components';
 
 
 const CloseButton = styled.Text`
@@ -14,7 +15,10 @@ class Quote extends React.Component {
 
   render() {
     return (
-      <CloseButton onPress={() => this.props.navigation.navigate('Home')}>Close</CloseButton>
+      <View>
+        <CloseButton onPress={() => this.props.navigation.navigate('Home')}>Close</CloseButton>
+        <QuoteBubble quote="This is a longer sentence of a test quote from Slack that we might eventually get." />
+      </View>
     );
   }
 }
